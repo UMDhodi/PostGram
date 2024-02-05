@@ -12,7 +12,6 @@ import { PostValidation } from "@/lib/validation"
 import { useUserContext } from "@/context/AuthContext"
 import { useToast } from "../ui/use-toast"
 import { useCreatePost, useUpdatePost } from "@/lib/react-query/queriesAndMutations"
-import { updatePost } from "@/lib/appwrite/api"
 
 
 type PostFormProps = {
