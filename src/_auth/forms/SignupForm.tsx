@@ -71,7 +71,7 @@ const SignupForm = () => {
           Create a new account
         </h2> 
         <p className="text-light-3 small-medium md:base-regular mt-2">
-          Enter your details
+          Enter your details with precision
         </p>
     
         <form onSubmit={form.handleSubmit(onSubmit)} 
