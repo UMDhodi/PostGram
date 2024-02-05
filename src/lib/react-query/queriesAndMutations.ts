@@ -1,13 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { 
     useQuery,
     useMutation,
     useQueryClient,
     useInfiniteQuery,
  } from '@tanstack/react-query';
-import { createUserAccount, deletePost, deleteSavedPost, getCurrentUser, getInfinitePost, getPostById, getRecentPost, getUserById, getUserPosts, getUsers, likePost, savePost, searchPosts, signInAccount, signOutAccount, updatePost, updateUser } from '../appwrite/api';
+import { createUserAccount, deletePost, deleteSavedPost, getCurrentUser, getInfinitePosts, getPostById, getRecentPost, getUserById, getUserPosts, getUsers, likePost, savePost, searchPosts, signInAccount, signOutAccount, updatePost, updateUser, createPost } from '../appwrite/api';
 import { INewPost, INewUser, IUpdatePost, IUpdateUser } from '@/types';
 import { QUERY_KEYS } from './queryKeys';
-import { createPost } from '@/lib/appwrite/api';
+
 
 export const useCreateUserAccount = () => {
     return useMutation({
@@ -167,18 +168,17 @@ export const useGetUserPosts = (userId?: string) => {
 
 export const useGetPosts = () => {
     return useInfiniteQuery({
-        queryKey: [QUERY_KEYS.GET_INFINITE_POSTS],
-        queryFn: getInfinitePost,
-        getNextPageParam: (lastPage) => {
-            if (lastPage && lastPage.documents.length === 0) {
-                return null;
-            }
-
-            //Use the $id of the last document as the cursor.
-            const lastId = lastPage?.documents[lastPage.documents.length - 1].$id;
-            return lastId;
+      queryKey: [QUERY_KEYS.GET_INFINITE_POSTS],
+      queryFn: getInfinitePosts as any,
+      getNextPageParam: (lastPage: any) => {
+        if (lastPage && lastPage.documents.length === 0) {
+          return null;
         }
-    })
+        const lastId = (lastPage.documents[lastPage.documents.length - 1].$id);
+        return lastId;
+      },
+      initialPageParam: null,
+    });
 }
 
 export const useSearchPosts = (searchTerm: string) => {

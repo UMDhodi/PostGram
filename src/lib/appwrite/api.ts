@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ID, Query } from "appwrite";
 import { account, appwriteConfig, avatars, databases, storage } from "./config";
 import { INewPost, INewUser, IUpdatePost, IUpdateUser } from "@/types";
@@ -361,8 +362,8 @@ export async function deletePost(postId: string, imageId: string) {
   }
 }
 
-export async function getInfinitePost( {  pageParam }: { pageParam: number }) {
-  const queries = [Query.orderDesc('$updatedAt'), Query.limit(10)];
+export async function getInfinitePosts( {  pageParam }: { pageParam: number }) {
+  const queries: any[] = [Query.orderDesc('$updatedAt'), Query.limit(9)];
   //If you find any error replace it
   //const queries: any[] = [Query.orderDesc('$updatedAt'), Query.limit(10)]; 
   if (pageParam) {
@@ -475,7 +476,7 @@ export async function updateUser(user: IUpdateUser) {
 }
 
 export async function getUsers(limit?: number) {
-  const queries= [Query.orderDesc('$createdAt')];
+  const queries: any[] = [Query.orderDesc('$createdAt')];
 
   //If you find any error replace it
   // const queries: any[] = [Query.orderDesc('$createdAt')];
