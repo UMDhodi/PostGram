@@ -1,12 +1,28 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import GridPostList from '@/components/shared/GridPostList';
 import Loader from '@/components/shared/Loader';
-import SearchResults from '@/components/shared/SearchResults';
 import { Input } from '@/components/ui/input';
 import useDebounce from '@/hooks/useDebounce';
-import { useGetPosts } from '@/lib/react-query/queriesAndMutations';
+import { useGetPosts, useSearchPosts } from '@/lib/react-query/queriesAndMutations';
 import { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer';
-import { useSearchParams } from 'react-router-dom';
+
+export type SearchResultProps = {
+  isSearchFetching: boolean;
+  searchedPosts: any;
+};
+
+const SearchResults = ({ isSearchFetching, searchedPosts }: SearchResultProps) => {
+  if (isSearchFetching) {
+    return <Loader />;
+  } else if (searchedPosts && searchedPosts.documents.length > 0) {
+    return <GridPostList posts={searchedPosts.documents} />;
+  } else {
+    return (
+      <p className="text-light-4 mt-10 text-center w-full">No results found</p>
+    );
+  }
+};
 
 const Explore = () => {
   const {ref, inView} = useInView();
@@ -14,13 +30,13 @@ const Explore = () => {
 
   const[searchValue, setSearchValue] = useState('');
   const debounceSearchValue = useDebounce(searchValue, 500);
-  const{ data: searchedPosts, isFetching: isSearchFetching } = useSearchParams(debounceSearchValue);
+  const{ data: searchedPosts, isFetching: isSearchFetching } = useSearchPosts(debounceSearchValue);
 
   useEffect(() => {
     if (inView && !searchValue) {
       fetchNextPage();
     }
-  }, [inView, searchValue]);
+  }, [fetchNextPage, inView, searchValue]);
 
   if (!posts) {
     return (

@@ -362,8 +362,9 @@ export async function deletePost(postId: string, imageId: string) {
 }
 
 export async function getInfinitePost( {  pageParam }: { pageParam: number }) {
-  const queries: any[] = [Query.orderDesc('$updatedAt'), Query.limit(10)];
-
+  const queries = [Query.orderDesc('$updatedAt'), Query.limit(10)];
+  //If you find any error replace it
+  //const queries: any[] = [Query.orderDesc('$updatedAt'), Query.limit(10)]; 
   if (pageParam) {
     queries.push(Query.cursorAfter(pageParam.toString()));
   }
@@ -373,7 +374,7 @@ export async function getInfinitePost( {  pageParam }: { pageParam: number }) {
       appwriteConfig.databaseId,
       appwriteConfig.postCollectionId,
       queries
-    )
+    );
 
     if (!posts) throw Error;
 
@@ -474,7 +475,10 @@ export async function updateUser(user: IUpdateUser) {
 }
 
 export async function getUsers(limit?: number) {
-  const queries: any[] = [Query.orderDesc('$createdAt')];
+  const queries= [Query.orderDesc('$createdAt')];
+
+  //If you find any error replace it
+  // const queries: any[] = [Query.orderDesc('$createdAt')];
 
   if (limit) {
     queries.push(Query.limit(limit));
