@@ -1,6 +1,6 @@
 <img src="https://github.com/UMDhodi/PostGram/blob/main/mockup2.png" alt="banner" >
 
-<span style="color:blue"># ✨PostGram</span>
+# ✨PostGram
 
 Discover our innovative social media platform, a culmination of my 6th-semester college project. Boasting a user-friendly interface, rich features, and seamless design, it simplifies post creation and exploration. With a robust authentication system and React Query for swift data fetching, it offers an unparalleled user experience. Join our active Discord community of 27,000+ members for support and collaboration. Explore the future of social media – it's not just a project; it's a journey!
 
