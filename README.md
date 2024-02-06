@@ -81,7 +81,7 @@ Running the Project
  npm start
 ```
 ## Screenshots
-<img src="https://github.com/UMDhodi/PostGram/blob/main/mockup1.png" alt="project-screenshot" width="500" height="300/">
+<img src="https://github.com/UMDhodi/PostGram/blob/main/mockup1.png" alt="project-screenshot" >
 
 
 
