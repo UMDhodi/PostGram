@@ -1,4 +1,4 @@
-<img src="https://github.com/UMDhodi/PostGram/blob/main/mockuplogo.png" alt="banner" height="1500" width="500">
+<img src="https://github.com/UMDhodi/PostGram/blob/main/mockuplogo.png" alt="banner" height="500" width="1500">
 
 
 # ✨PostGram
