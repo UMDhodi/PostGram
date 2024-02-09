@@ -1,4 +1,4 @@
-<img src="https://github.com/UMDhodi/PostGram/blob/main/mockup2.png" alt="banner" >
+<img src="https://github.com/UMDhodi/PostGram/blob/main/mockup1.png" alt="banner" >
 
 # ✨PostGram
 
@@ -80,8 +80,7 @@ Running the Project
  npm start
 ```
 ## Screenshots
-<img src="https://github.com/UMDhodi/PostGram/blob/main/mockup1.png" alt="project-screenshot" >
-
+<img src="https://github.com/UMDhodi/PostGram/blob/main/mockup2.png" alt="project-screenshot" >
 
 
 ## 🔗 Links
