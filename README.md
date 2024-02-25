@@ -51,7 +51,7 @@ Discover our innovative social media platform, a culmination of my 6th-semester 
 Cloning the Repository
 
 ```bash
-  https://github.com/UMDhodi/PostGram.git
+  git clone https://github.com/UMDhodi/PostGram.git
   cd PostGram
 ```
 
