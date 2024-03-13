@@ -2,7 +2,7 @@
 
 # ✨PostGram
 
-Discover our innovative social media platform, a culmination of my 6th-semester college project. Boasting a user-friendly interface, rich features, and seamless design, it simplifies post creation and exploration. With a robust authentication system and React Query for swift data fetching, it offers an unparalleled user experience. Join our active Discord community of 27,000+ members for support and collaboration. Explore the future of social media – it's not just a project; it's a journey!
+Discover our innovative social media platform, a culmination of my 6th-semester college project. Boasting a user-friendly interface, rich features, and seamless design, it simplifies post creation and exploration. With a robust authentication system and React Query for swift data fetching, it offers an unparalleled user experience. Explore the future of social media – it's not just a project; it's a journey!
 
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
